@@ -1,0 +1,56 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Diaspora of the first commit",
+  "steps": [
+    {
+      "file": "app/game/Swarm/App.hs",
+      "description": "`App`.",
+      "line": 44
+    },
+    {
+      "file": "src/swarm-lang/Swarm/Language/Syntax/Constants.hs",
+      "description": "Commands show up in several places. Here's one:",
+      "line": 89
+    },
+    {
+      "file": "src/swarm-lang/Swarm/Language/Capability.hs",
+      "description": "Here's another.",
+      "line": 64
+    },
+    {
+      "file": "src/swarm-engine/Swarm/Game/Step/Const.hs",
+      "description": "Here's where that action is actually performed!",
+      "line": 305
+    },
+    {
+      "file": "src/swarm-lang/Swarm/Language/Parser/Core.hs",
+      "description": "`Parser` has became a full `Swarm.Language.Parser` module.\n\t\t",
+      "line": 1
+    },
+    {
+      "file": "src/swarm-tui/Swarm/TUI/Model.hs",
+      "description": "`AppState`.",
+      "line": 175
+    },
+    {
+      "file": "src/swarm-tui/Swarm/TUI/View.hs",
+      "description": "`drawUI`.",
+      "line": 161
+    },
+    {
+      "file": "app/game/Swarm/App.hs",
+      "description": "`EventHandler` #1",
+      "line": 105
+    },
+    {
+      "file": "src/swarm-tui/Swarm/TUI/Controller.hs",
+      "description": "`EventHandler` #2",
+      "line": 122
+    },
+    {
+      "file": "app/game/Main.hs",
+      "description": "new `main`.",
+      "line": 220
+    }
+  ]
+}
