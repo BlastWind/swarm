@@ -1,0 +1,20 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "preuse $ world . ix row . ix col",
+  "steps": [
+    {
+      "file": "app/Main.hs",
+      "description": "What is `preuse $ world . ix row . ix col` doing?\n\nFirst, `world . ix row . ix col` makes a `Traversal' GameState Char`. But preuse takes in a `Getting (First Char) GameState Char`, which doesn't look unified at first glance.\n\nBut, they actually are —",
+      "line": 140
+    },
+    {
+      "file": "app/Main.hs",
+      "description": "A `Traversal' GameState Char` is any `Monoid m => Getting (m Char) GameState Char`, which is practically a `Fold`! When interpretted as a such, a `Traversal`'s collection strategy is provided by its `Monoid m`. `Monoid`s like `First`, `Endo`, `Max` frequently encapsulates our collection needs. \n",
+      "line": 131
+    },
+    {
+      "file": "app/Main.hs",
+      "description": "Hence, `Traversal'` and the `Getting` are now unifiable. \n\n`preuse` requests the collection strategy to be `First`, which allows us to grab the first non-`Nothing` value (or a `Nothing` if there are no `Just`s). \n\nBtw, the reason there could be `Nothing` is due to the nature of `Traversal`: It allows for 0 or many targets. In the case where we hit 0, we essentially get `Nothing`.",
+      "line": 143
+    }]
+}

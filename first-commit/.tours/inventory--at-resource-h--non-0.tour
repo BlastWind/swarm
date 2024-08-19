@@ -1,0 +1,26 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "inventory . at (Resource h) . non 0",
+  "steps": [
+    {
+      "file": "app/Main.hs",
+      "description": "Deleting the `non 0` breaks the code. At first glance, this is odd: `at (Resource h)` should give us an `Int` to `+= 1` on?",
+      "line": 154
+    },
+    {
+      "file": "app/Main.hs",
+      "description": "Yes, except `at` packages the result into a `Maybe`, in case that there are 0 targets. This also allows the example shown here to be written as a `Lens'`, since there is exactly 1 target.\n\nBut, the same code with `ix` works, and in fact gets rid of `Maybe`, but it should be used in only specific contexts —",
+      "line": 137
+    },
+    {
+      "file": "app/Main.hs",
+      "description": "This will work with `Setter` combinators! If the `Traversal` has 0 targets and gets turned into a `Setter`, applying simply wouldn't set anything.\n\nHowever, what we can't do is building a `Getter` with this.",
+      "line": 140
+    },
+    {
+      "file": "app/Main.hs",
+      "description": "Note, `invetory . ix (Resource h) += 1` does not throw. However, it is not what we want. This is because `ix` can't insert. However, we need to initialize value of key `Resource h` to 0.",
+      "line": 160
+    }
+  ]
+}

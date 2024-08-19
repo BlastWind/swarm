@@ -1,0 +1,26 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "What happens every tick?",
+  "steps": [
+    {
+      "file": "app/Main.hs",
+      "description": "Per `Tick`, we start here, executing `doStep` (which we updates internal state, the `GameState`)",
+      "line": 162
+    },
+    {
+      "file": "app/Main.hs",
+      "description": "`doStep` invokes the stateful computation `step`.",
+      "line": 112
+    },
+    {
+      "file": "app/Main.hs",
+      "description": "`step` will step *each* robot exactly *one* command. `stepRobot` returns `Nothing` if a robot has no more commands, in which case, `catMaybes` removes the robot.",
+      "line": 106
+    },
+    {
+      "file": "app/Main.hs",
+      "description": "We step a robot by *one* command. We effectively \"throw away\" the used command by setting the robot's new program to the tail of the original program. Recall, tail of a list is the list minus its head.",
+      "line": 115
+    }
+  ]
+}

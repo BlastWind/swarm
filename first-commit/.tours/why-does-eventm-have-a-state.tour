@@ -1,0 +1,16 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Why does EventM have a State?",
+  "steps": [
+    {
+      "file": "app/Main.hs",
+      "description": "At first I was unaware of `EventM` satisfying `MonadState GameState`. But the `modify` indicates that `EventM` is stateful!",
+      "line": 162
+    },
+    {
+      "file": "app/Main.hs",
+      "description": "The beauty of `State` here lies. Instead of making `step` something like `step :: GameState -> GameState`, it is just `State GameState ()`! \n\nI feel like I never really understood what `State` is until I saw this right here. It is a computation that is now stateful. \n\nAny functions of type **a -> a** with the semantics of \"updating\" can be made, perhaps, stateful via `State`!",
+      "line": 106
+    }
+  ]
+}

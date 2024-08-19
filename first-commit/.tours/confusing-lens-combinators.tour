@@ -1,0 +1,11 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "r & robotProgram .~ p",
+  "steps": [
+    {
+      "file": "app/Main.hs",
+      "description": "What the hell is the `(r & robotProgram .~ p)` doing?\n\n- `robotProgram .~ p` creates an updater `Robot -> Robot`. Given an input robot, it will update its program to `p` (the tail of the programs).\n- `r &` applies `r` to this updater. \n- Hence, this is effectively a means to achieve the right looping. `stepRobot` should step 1 robot through just 1 command, leaving the rest for the later ticks.",
+      "line": 117
+    }
+  ]
+}
